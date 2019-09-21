@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
@@ -13,11 +12,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
     }
 
     public void handleExplicitIntent(View view) {
-        Intent intent =  new Intent(this, ExplicitIntentActivity.class);
+        Intent intent = new Intent(this, ExplicitIntentActivity.class);
         startActivity(intent);
     }
 
@@ -25,14 +23,18 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
-
     public void handleImplicitIntent(View view) {
-        Intent intent= new Intent(this,ImplicitIntentActivity.class);
+        Intent intent = new Intent(this, ImplicitIntentActivity.class);
         startActivity(intent);
     }
 
-    public void handleBundle(View view) {
-        Intent intent= new Intent(this,ProfileBundleActivity.class);
+    public void handleAndroidBundle(View view) {
+        Intent intent = new Intent(this, BundleActivity.class);
+        startActivity(intent);
+    }
+
+    public void handleParcel(View view) {
+        Intent intent = new Intent(this, ProfileParcelableActivity.class);
         startActivity(intent);
     }
 }
